@@ -8,6 +8,7 @@ class AppColors {
 
   static const Color white = Colors.white;
   static const Color jetBlack = Color(0xff1E1E1E);
+  static const Color titleBlack = Color(0xff2B2D2F);
   static const Color orangeBrown = Color(0xff7A3202);
   static const Color whiteBg = Color(0xffFAFBFC);
 }

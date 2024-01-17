@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:swift_resume_builder/service/constant/colors.dart';
 import 'package:swift_resume_builder/service/constant/dimensions.dart';
 import 'package:swift_resume_builder/view/widgets/buttons.dart';
@@ -19,8 +20,73 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Column(
-        children: [topBar()],
+        children: [
+          topBar(),
+          Stack(children: [
+            ClipPath(
+              clipper: WaveClipperTwo(reverse: false, flip: true),
+              child: Container(
+                height: MediaQuery.of(context).size.height * .8,
+                color: AppColors.whiteBg,
+              ),
+            ),
+            Center(
+              child: Container(
+                width: AppDimensions.maxWidthSize,
+                height: MediaQuery.of(context).size.height * .75,
+                // color: Colors.yellow,
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomText().smallBoldBody(
+                            text: 'YOUR PATH TO PROFESSIONAL EXCELENCE',
+                            color: const Color(0xff808080)),
+                        20.heigth,
+                        CustomText().largeBoldBody(
+                          text: 'Design  Resumes',
+                          color: AppColors.titleBlack,
+                        ),
+                        10.heigth,
+                        CustomText().largeBoldBody(
+                          text: 'That  Make  An',
+                          color: AppColors.titleBlack,
+                        ),
+                        10.heigth,
+                        CustomText().largeBoldBody(
+                          text: 'Impact',
+                          color: AppColors.primaryBlue,
+                        ),
+                        20.heigth,
+                        CustomText().mediumBody(
+                            text:
+                                'Start crafting your success story – Swift, Stylish, and Successful!',
+                            color: const Color(0xff808080)),
+                        4.heigth,
+                        CustomText().mediumBody(
+                            text:
+                                'Get started today and unlock the door to your next great opportunity.',
+                            color: const Color(0xff808080)),
+                        50.heigth,
+                        const CustomButtons(
+                          text: 'BUILD  MY  RESUME',
+                        )
+                      ],
+                    )),
+                    20.width,
+                    const Expanded(child: SizedBox())
+                  ],
+                ),
+              ),
+            ),
+          ]),
+        ],
       ),
     );
   }
@@ -28,7 +94,7 @@ class _HomeTabState extends State<HomeTab> {
   Center topBar() {
     return Center(
       child: Container(
-        height: 60,
+        height: 65,
         width: AppDimensions.maxWidthSize,
         padding: const EdgeInsets.symmetric(horizontal: 50),
         color: AppColors.white,
@@ -78,7 +144,7 @@ class _HomeTabState extends State<HomeTab> {
   Text logoText() {
     return const Text.rich(
         style: TextStyle(
-          color: AppColors.orangeBrown,
+          color: AppColors.jetBlack,
           fontSize: 24,
           fontWeight: FontWeight.w900,
         ), //style for all textspan

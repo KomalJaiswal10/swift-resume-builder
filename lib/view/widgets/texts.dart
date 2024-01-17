@@ -24,13 +24,44 @@ class CustomText extends BaseCustomText {
     ));
   }
 
-  Widget buttonText({required String text, required Color color}) {
+  Widget mediumBody({required String text, required Color color}) {
+    return defaultTextStyle(
+        text: Text(
+      text,
+      style:
+          Theme.of(Get.context!).textTheme.titleMedium!.copyWith(color: color),
+    ));
+  }
+
+  Widget smallBoldBody({required String text, required Color color}) {
     return defaultTextStyle(
         text: Text(
       text,
       style: Theme.of(Get.context!)
           .textTheme
           .titleSmall!
+          .copyWith(color: color, fontWeight: FontWeight.bold),
+    ));
+  }
+
+  Widget largeBoldBody({required String text, required Color color}) {
+    return defaultTextStyle(
+        text: Text(
+      text,
+      style: Theme.of(Get.context!)
+          .textTheme
+          .displayMedium!
+          .copyWith(color: color, fontWeight: FontWeight.w900),
+    ));
+  }
+
+  Widget buttonText({required String text, required Color color}) {
+    return defaultTextStyle(
+        text: Text(
+      text,
+      style: Theme.of(Get.context!)
+          .textTheme
+          .titleMedium!
           .copyWith(color: color, fontWeight: FontWeight.bold),
     ));
   }
